@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #f9f3ee;
+    --text-primary: #273440;
+    --bg-text: #c1bab8;
+    --card-bg: #d8d1cb;
+    --btn-bg: #273440;
+    --btn-text: #1e2b38;/* for bold text */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+[data-theme="dark"]{
+     --bg-color: #121212;
+    --text-primary: #eaeaea;
+  
+    --card-bg: #1e1e1e;
+    --btn-bg: #ffffff;
+    --btn-text:#eaeaea;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    
+   
+}
+
+.main-container{
+width: 100%;
+max-width: 1440px;
+min-height: 100vh;
+overflow: hidden;
+
+}
+
+/* header secton styling */
+navbar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+   border-bottom: 1px solid var(--btn-text);
+
+}
+.logo img{
+    width: 3.12rem;
+    background-color: white;
+    border-radius: 20%;
+}
+ul{
+    list-style: none;
+}
+.links{
+   
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 1.8rem;
+}
+.links a{
+    display: block;
+    text-decoration: none;
+    color: var(--btn-text);
+    font-weight: 500;
+   
+
+}
+.links a:hover{
+    text-decoration: underline;
+
+}
+
+ .sign-btn{
+    
+    background: var(--btn-bg);
+    color:var(--bg-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    border-radius: 3.12rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    &:hover{
+        transform: scale(1.3);
+    }
+}
+#theme-toggle{
+    margin-top: -0.3rem;
+font-size: 1.3rem;
+cursor: pointer;
+background: none;
+border: none;
+color: black;
+transition: transform 0.2s;
+&:hover{
+    
+    transform: scale(1.3);
+}
+}
+/* main section styling */
+.hero{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(1,1fr);
+    gap: rem;
+}
+.main-section-left{
+display: grid;
+align-content: center;
+padding-left: 2rem;
+gap:2rem;
+
+}
+.main-title{
+    margin-top: -1rem;
+    width:70%
+}
+.desc{
+font-size: 1.2rem;
+margin-top: -4rem;
+}
+.card-grid{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap:1rem;
+
+}
+.card{
+    width: 200px;
+    height: auto;
+background-color: var(--card-bg);
+border-radius: 45% 45% 1.3rem 1.3rem;
+/* padding: 1rem; */
+display: grid;
+grid-template-rows: 1fr auto;
+justify-items: center;
+box-shadow: 0px 10px 20px rgba(0,0,0,0.05);
+transition: transform 0.3s ease,box-shadow 0.3s ease;
+border: 2px solid white;
+&:hover{
+    transform: translateY(-10px);
+    box-sizing: 0 20px 30px rgba(0,0,0,0.01);
+}
+}
+.card-img{
+
+}
+.card-img >img{
+width: 130px;
+padding: 1rem;
+}
+.card-info >h2{
+    color: black;
+font-size: 1.5rem;
+font-weight:900;
+text-align: center;
+-webkit-text-stroke: 0.5px white;
+}
+.card-info >p{
+text-align: center;
+padding-bottom: 0.5rem;
+}
+.price{
+text-align: center;
+background-color: white;
+width: 196px;
+padding: 0.2rem 0;
+border-radius: 4rem 4rem 2rem 2rem;
+font-size: 2rem;
+font-weight: 500;
+color:rgba(234, 132, 132, 0.404);
+&:hover{
+    color:rgb(249, 87, 87);
+}
+}
+.main-section-right{
+position: relative;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-columns: 1fr;
+}
+.main-section-right .stone>img{
+    width: 50%;
+    position: absolute;
+left: 10%;
+top: 5%;
+
+z-index: 1;
+}
+
+.main-section-right .hand>img{
+width: 80%;
+ position: absolute;
+left: 10%;
+top: 7%;
+transform: rotate(22deg);
+z-index: 0;
+}
+ 
+.main-section-right .barcode{
+    left: 5%;
+top: 80%;
+     position: absolute;
+ padding: 1rem;
+    border: 1px solid white;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    width: 85%;
+}
+.main-section-right .barcode>img{
+   width: 100%;
+
+height: 80px;
+border-radius: 20px;
+
+
+}
+.vertical-text{
+position: absolute;
+right: 0;
+top: 10%;
+writing-mode: vertical-lr;
+text-orientation: mixed;
+font-size: 6rem;
+font-weight: 900;
+color: rgba(0,0,0,0.05);
+letter-spacing: 0.5rem;
+font-family: var(--font-body);
+z-index: 0;
+}
+footer {
+    margin-top: 1rem;
+    display: grid;
+    background-color:var(--card-bg) ;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: center;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: 1px solid var(--btn-text);
+}
+
+.footer-item {
+    font-weight: 600;
+    color: var(--text-primary);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0.7rem;
+    align-items: center;
+    font-size: 0.99rem;
+}
+.footer-item img{
+    width: 4.37rem;
+    opacity: 0.5;
+    &:hover{
+        opacity: 1;
+    }
+}
+@media (max-width: 1024px) {
+    .links {
+        gap: 1rem; 
+    }
+    .sign-btn{
+        padding: 0.1rem 0.3rem;
+        font-size: 0.8rem;
+    }
+.main-title{
+    width: 60%;
+}
+.desc{
+    font-size: 1rem;
+}
+.card{
+    margin-top: -2rem;
+width: 170px;
+}
+.card-img >img{
+width: 110px;
+
+}
+.card-info >h2{
+    color: black;
+font-size: 1.3rem;
+
+}
+.card-info >p{
+
+}
+.price{
+
+width: 166px;
+
+font-size: 1.7rem;
+
+}
+
+.main-section-right .barcode{
+    width: 70%;
+    padding: 0.7rem;
+}
+.vertical-text{
+    font-size: 5rem;
+}
+  .footer-item{
+    gap: 0.1rem;
+    font-size: 0.9rem;
+  }
+  .footer-item img{
+    width: 3rem;
+  }
+}
+
+/* responsive for tablet */
+@media (max-width: 768px) {
+    
+    .links {
+        gap: 0.7rem; 
+        font-size: 0.7rem;
+    }
+    .sign-btn{
+      
+        font-size: 0.7rem;
+    }
+   .hero{
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(2,1fr);
+   }
+ .main-title{
+    margin-left: 20%;
+ }
+ .desc{
+    margin-left: 20%;
+ }
+ .card-grid{
+    margin-left:5%;
+ }
+.main-section-right .stone>img{
+    left: 20%;
+    width: 40%;
+    
+}
+.main-section-right .hand>img{
+width: 60%;
+ 
+left: 20%;
+top: 10%;
+
+}
+ 
+.main-section-right .barcode{
+    left: 10%;
+top: 85%;
+ 
+    width: 60%;
+}
+.main-section-right .barcode>img{
+   width: 100%;
+
+height: 60px;
+border-radius: 20px;
+
+
+}
+.vertical-text{
+display: none;
+}
+
+    
+     .footer-item{
+    
+    font-size: 0.7rem;
+  }
+  .footer-item img{
+    width: 2.6rem;
+  }
+}
+
+/* responsive for mobile */
+@media (max-width: 430px) {
+    .logo img{
+    width: 2rem;}
+    .links {
+        gap: 0.4rem; 
+        font-size: 0.5rem;
+    }
+    .links{
+         justify-content: end;
+    }
+    .links a{display: none;}
+    .sign-btn{
+     
+    }
+   .main-title{
+    width: 50%;
+    margin-left: 10%;
+    margin-bottom: 0.5rem;
+ }
+ .desc{
+    margin-left: 0%;
+    font-size: 0.8rem;
+ }
+ .card-grid{
+    margin-left:0%;
+    gap: 2rem;
+ }
+.main-section-right .stone>img{
+    left: 15%;
+    width: 30%;
+    
+}
+.main-section-right .hand>img{
+width: 55%;
+ 
+left: 11%;
+top: 4%;
+
+}
+ 
+.main-section-right .barcode{
+    left: 5%;
+top: 70%;
+ 
+    width: 50%;
+}
+.main-section-right .barcode>img{
+   width: 100%;
+
+height: 50px;
+border-radius: 20px;
+
+
+}
+
+    
+     footer{
+        margin-top: -3rem;
+        display: grid;
+       grid-template-columns: repeat(5,1fr);
+       /* grid-template-rows: repeat(2,1fr); */
+ padding:0px;
+  }
+  .footer-item{
+    font-size: 0.4rem;
+gap: 0rem;
+  }
+  .footer-item img{
+    width: 1.4rem;
+  }
+}
+
+@media (max-width: 325px) {
+   
+    .main-title{
+        margin-top: 1rem;
+    width: 70%;
+    margin-left: 10%;
+    margin-bottom: 2rem;
+ }
+ .desc{
+    margin-left: 0%;
+    font-size: 0.6rem;
+ }
+ .card-grid{
+    margin-left:15%;
+    grid-template-columns: 1fr;
+    
+ }
+ .card{
+    margin-bottom: 2rem;
+ }
+.main-section-right .stone>img{
+    left: 15%;
+    width: 50%;
+    
+}
+.main-section-right .hand>img{
+width: 85%;
+ 
+left: 11%;
+top: 5%;
+
+}
+ 
+.main-section-right .barcode{
+    left: 5%;
+top: 30%;
+ 
+    width: 70%;
+}
+.main-section-right .barcode>img{
+   width: 100%;
+
+height: 40px;
+border-radius: 20px;
+
+
+}
+footer{
+margin-top: -40rem;
+}
+.footer-item{
+    font-size: 0.28rem;
+
+  }
+  .footer-item img{
+    width: 1.1rem;
+  }
+}
